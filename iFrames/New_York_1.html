@@ -1,0 +1,150 @@
+<head>
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../Scripts/midnight.jquery.min.js"></script>
+    <script src="../Scripts/Stellar/jquery.stellar.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <link href="../Styles/minimuslider/minimus_style.css" rel="stylesheet" />
+    <script src="../Scripts/minimuslider/jquery.minimuslider-1.3.min.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/MainTemplate.css" rel="stylesheet" />
+    <link href="../Styles/Paddys_G_Menu.css" rel="stylesheet" />
+    <script src="../Scripts/Paddys_G_Menu.js"></script>
+    <script src="../Scripts/MainScript.js"></script>
+    <link href="Styles/Responsive.css" rel="stylesheet" />
+    
+        <style>
+        .minimus-caption{
+            display: none;
+        }
+        .active img{
+            top: 0 !important;
+        }
+        .minimus-slider{
+            height: 99vw !important;
+        }
+        .minimus-slide{
+            height: 99vw !important;
+        }
+        #slider_container{
+            width: 75%;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#my_slider").minimus({
+                "animation_start": "manual",
+                "animation_type": "fade",
+                "animation_duration": 0
+            });
+            photo_count_update('default');
+        });
+        
+        function photo_count_update(direction){
+            var photo_count_current = $('#my_slider .active img').data('position')
+            var photo_count_total = $('#my_slider img.last').data('position')
+            
+            if (direction == "up" && photo_count_current == "20")
+            {
+                photo_count_current = 1;
+                direction = "default";
+            } else if (direction == "down" && photo_count_current == "1")
+            {
+                photo_count_current = 20;
+                direction = "default";
+            }
+            switch (direction) {
+                case 'up':
+                    $('#photo_count_current').html(photo_count_current+1)
+                    break;
+                case 'down':
+                    $('#photo_count_current').html(photo_count_current-1)
+                    break;
+                case 'default':
+                    $('#photo_count_current').html(photo_count_current)
+                    break;
+            }
+            $('#photo_count_total').html(photo_count_total)
+        }
+        
+    </script>
+    
+</head>
+<body style="overflow: hidden;">
+    <div id="my_slider" class="minimus-slider">
+        <!-- images -->
+        <!-- for images lazy loading insert a placeholder in "src" and the path to the image in "data-src" -->
+        <!-- for hi resolution images suport insert the path to the hi resolution image in "data-src-2x" -->
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Flag.png" data-position="1" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Freddie.png" data-position="2" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Hudson.png" data-position="3" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Jack Mister and Slim.png" data-position="4" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Jack.png" data-position="5"  alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Katie on the beach.png" data-position="6" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Kenji.png" data-position="7" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Kyna 2.png" data-position="8" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Man with earings in O'hare.png" data-position="9" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Paddy and Ruby.png" data-position="10" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Phillip and Jack's Forrest.png" data-position="11" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Picnic Table.png" data-position="12" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Rob.png" data-position="13" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Rooi Els.png" data-position="14" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/The Train.png" data-position="15" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Two kids at Coney.png" data-position="16" alt="alt text" title="img caption" />
+        </div>
+         <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Annoyed Carolina.png" data-position="17" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Austen 3.png" data-position="18" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Austen in bed.png" data-position="19" alt="alt text" title="img caption" />
+        </div>
+        <div class="minimus-slide">
+            <img src="../Images/Pictures/Full_Pictures/Cranes.png" data-position="20" class="last" alt="alt text" title="img caption" />
+        </div>
+    </div>
+    <!-- navigation controls -->
+    <div class="minimus-navslide" style="margin-top: 20px;">
+        <span class="minimus-prev" onclick="photo_count_update('down');">previous</span>
+        <span class="">|</span>
+        <span class="minimus-next" onclick="photo_count_update('up');">next</span>
+        <span class="minimus-total" style="float: right;">
+            <span id="photo_count_current">1</span>
+            <span>/</span>
+            <span id="photo_count_total">20</span>
+        </span>
+    </div>
+</body>
