@@ -1,0 +1,175 @@
+﻿	
+@font-face {
+    font-family: 'Quicksand-Regular';
+    src: url('Quicksand-Regular.ttf') format('truetype');
+}
+
+body{
+    font-family: "Quicksand-Regular" !important;
+    margin: 0;
+    background-color: black !important;
+    color: black;
+}
+
+.fp-controlArrow{
+    border-color: transparent #333 transparent #333 !important;
+}
+
+/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+    
+    .text_left{
+        text-align: left;    
+    }
+    
+    .text_right{
+        text-align: right;
+    }
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+		overflow: hidden;
+        /*background: linear-gradient(#BBBABB, white, #BBBABB);*/
+        background: black;
+	}
+
+	#background_video{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#main_page .layer{
+    margin: 0 auto;
+    position: relative;
+		z-index: 4;
+		width: 645px;
+		left: 0;
+		/*top: 13%;*/
+        height: 100%;
+	}
+
+    .loader {
+        margin-top: 25%;
+    }
+
+    .loader p{
+        color: white;
+        font-size: 20px;
+        margin:0px;
+    }
+    
+    .intro_text{
+        font-size: 22px;
+        color :white;
+        /*display:none;*/
+        margin-top: 32%;
+    }
+    
+    .intro_text_continued{
+        font-size: 22px;
+        color :white;
+        height: 52px;
+        /*display:none;*/
+    }
+    
+    #skip_intro{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    
+    #skip_intro:hover{
+        text-decoration: none;
+        color: #aaa
+    }
+    
+    .text_fade{
+        display: none;
+    }
+
+    .main_title{
+        font-size: 72px;
+        color :white;
+        /*display:none;*/
+        margin-top: 25%;
+    }
+
+    .main_div{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        /*margin: 81px auto;*/
+        /*background-color: gray;*/
+    }
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#main_page{
+		overflow: hidden;
+        background-size: cover;
+        height: 100%;
+	}
+    
+
+.help {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 4;
+}
+
+#help_symbol{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.help:hover + #help_box { 
+    display: block; 
+}
+
+#help_box{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 4;
+    width: 500px;
+    height: 125px;
+    padding: 17px 32px;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+}
+
+#help_title {
+    font-size: 20px;
+}
+
